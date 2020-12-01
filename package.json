@@ -1,10 +1,14 @@
 {
-  "name": "Socket-Online-Chat-Group-3",
-  "version": "0.0.1",
-  "description": "He Thong Chat Online - Group 3",
+  "name": "socket.io-chat",
+  "version": "0.0.0",
+  "description": "A simple chat client using socket.io",
+  "main": "index.js",
+  "author": "Grant Timmerman",
+  "private": true,
+  "license": "BSD",
   "dependencies": {
-    "express": "^4.15.2",
-    "socket.io": "^1.7.3"
+    "express": "~4.17.1",
+    "socket.io": "^3.0.0"
   },
   "scripts": {
     "start": "node index.js"
