@@ -2,5 +2,5 @@
 
 - SOCKET.IO
 - Cho phép chat trực tiếp và chat theo nhóm
-- Quản lý nguoi dùng, đăng ký trên server
+- Quản lý người dùng, đăng ký trên server
 - Docker + Cung cấp tài liệu setup
