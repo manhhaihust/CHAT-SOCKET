@@ -1,8 +1,9 @@
 
-# Socket.IO Chat
+# Socket.IO Chat Group 3 - GINP15
 
-A simple chat demo for Socket.IO
-
+ - Cho phép chat trực tiếp và chat theo nhóm
+ - Quản lý người dùng, đăng ký trên server
+ - DOCKER + Cung cấp tài liệu setup hệ thống
 ## How to use
 
 ```
@@ -13,10 +14,3 @@ $ npm start
 And point your browser to `http://localhost:3000`. Optionally, specify
 a port by supplying the `PORT` env variable.
 
-## Features
-
-- Multiple users can join a chat room by each entering a unique username
-on website load.
-- Users can type chat messages to the chat room.
-- A notification is sent to all users when a user joins or leaves
-the chatroom.
