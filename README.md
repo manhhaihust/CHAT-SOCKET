@@ -1,4 +1,4 @@
-# HE THONG CHAT ONLINE - GROUP 3
+# HỆ THỐNG CHAT ONLINE - GROUP 3
 
 - SOCKET.IO
 - Cho phép chat trực tiếp và chat theo nhóm
