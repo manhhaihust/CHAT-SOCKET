@@ -90,7 +90,7 @@ $(function() {
     var $messageBodyDiv = $('<span class="messageBody">')
       .text(data.message);
 
-    var typingClass = data.typing ? 'typing' : '';
+    var typingClass = data.typing ? 'đang nhập' : '';
     var $messageDiv = $('<li class="message"/>')
       .data('username', data.username)
       .addClass(typingClass)
@@ -102,7 +102,7 @@ $(function() {
   // Adds the visual chat typing message
   const addChatTyping = (data) => {
     data.typing = true;
-    data.message = 'is typing';
+    data.message = 'đang nhập...';
     addChatMessage(data);
   }
 
@@ -154,7 +154,7 @@ $(function() {
     if (connected) {
       if (!typing) {
         typing = true;
-        socket.emit('typing');
+        socket.emit('đang nhập');
       }
       lastTypingTime = (new Date()).getTime();
 
@@ -162,7 +162,7 @@ $(function() {
         var typingTimer = (new Date()).getTime();
         var timeDiff = typingTimer - lastTypingTime;
         if (timeDiff >= TYPING_TIMER_LENGTH && typing) {
-          socket.emit('stop typing');
+          socket.emit('dừng nhập');
           typing = false;
         }
       }, TYPING_TIMER_LENGTH);
@@ -260,16 +260,16 @@ $(function() {
   });
 
   // Whenever the server emits 'stop typing', kill the typing message
-  socket.on('stop typing', (data) => {
+  socket.on('dừng nhập', (data) => {
     removeChatTyping(data);
   });
 
   socket.on('disconnect', () => {
-    log('you have been disconnected');
+    log('Bạn đã bị ngắt kết nối');
   });
 
   socket.on('reconnect', () => {
-    log('you have been reconnected');
+    log('Bạn đã kết nối lại');
     if (username) {
       socket.emit('add user', username);
     }
