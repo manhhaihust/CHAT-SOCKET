@@ -1,0 +1,16 @@
+{
+  "name": "socket.io-chat",
+  "version": "0.0.0",
+  "description": "Chat socketIO nhom3",
+  "main": "index.js",
+  "author": "Manh Hai Hust",
+  "private": true,
+  "license": "BSD",
+  "dependencies": {
+    "express": "~4.17.1",
+    "socket.io": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
