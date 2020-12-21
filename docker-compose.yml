@@ -1,10 +1,27 @@
-version: '3.3'
+version: "3"
+
 services:
-  api:
-    container_name: node
-    restart: always
+  node:
     build:
-      context: ./
-      dockerfile: ./Dockerfile
+      context: ./.docker/services
+      dockerfile: ./node/Dockerfile
+    working_dir: /var/www/app
+    volumes:
+      - .:/var/www/app
+    command: [/bin/bash, ./.docker/services/node/command.sh]
+    tty: true
+
+  nginx:
+    build:
+      context: ./.docker/services/
+      dockerfile: ./nginx/build/Dockerfile
+    command: [/bin/bash, .docker/services/nginx/build/command.sh]
     ports:
-      - "8080:8080"
+      - "443:443"
+      - "6969:6969"
+    volumes:
+      - ./.docker/services/nginx/conf:/etc/nginx/conf.d
+      - .:/var/www/app
+    working_dir: /var/www/app
+  redis:
+    image: redis:3.2
